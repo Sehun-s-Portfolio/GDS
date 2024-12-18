@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GDS KOREA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link th:href="@{/img/favicon.ico}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/new2.css}" rel="stylesheet">
+    <link th:href="@{/css/new2.scss}" rel="stylesheet">
+    <link th:href="@{/css/new.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid navBar bg-transparent">
+    <nav class="navbar  navbar-expand-lg  navbar-light py-0 px-4">
+        <!-- 로고 클릭 -->
+        <a href="/" th:if="${session.auth.equals('user')}" class="navbar-brand d-flex align-items-center text-center">
+            <div class="icon p-2 me-2">
+                <img class="img-fluid" th:src="@{/img/gdskorea.png}" alt="Icon">
+            </div>
+        </a>
+        <a href="/admin" th:if="${session.auth.equals('admin')}" class="navbar-brand d-flex align-items-center text-center">
+            <div class="icon p-2 me-2">
+                <img class="img-fluid" th:src="@{/img/gdskorea.png}" alt="Icon">
+            </div>
+        </a>
+
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <!-- 메인 -->
+                <a href="/" th:if="${session.auth.equals('user')}" class="nav-item nav-link">Home</a>
+                <a href="/admin" th:if="${session.auth.equals('admin')}" class="nav-item nav-link">Home</a>
+
+                <!-- 소개 -->
+                <a href="/gds/about" th:if="${session.auth.equals('user')}" class="nav-item nav-link"
+                   style="color: white">About</a>
+                <a href="/gds/admin/about" th:if="${session.auth.equals('admin')}" class="nav-item nav-link">About</a>
+
+                <!-- 프로젝트 -->
+                <a href="/gds/project" th:if="${session.auth.equals('user')}" class="nav-item nav-link"
+                   style="color: white">Project</a>
+                <a href="/gds/admin/project" th:if="${session.auth.equals('admin')}"
+                   class="nav-item nav-link">Project</a>
+
+                <!-- 프로덕트 -->
+                <div class="dropdown">
+                    <a class="dropdown-toggle nav-item nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Product Type
+                    </a>
+                    <!-- 유저 프로덕트 카테고리 메뉴 -->
+                    <ul class="dropdown-menu productCategory" th:if="${session.auth.equals('user')}" style="display: none;">
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="userDropdown1"
+                                        aria-expanded="false">
+                                    LED HOUSE LIGHT
+                                </button>
+                                <ul class="dropdown-menu ledHouseLightList" id="userDropdown1" style="display: none; left: 100%; top: -8px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="userDropdown2"
+                                        aria-expanded="false">
+                                    RD PANEL
+                                </button>
+                                <ul class="dropdown-menu rdPanelList" id="userDropdown2" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="userDropdown3"
+                                        aria-expanded="false">
+                                    DMX SPLITTER
+                                </button>
+                                <ul class="dropdown-menu dmxSplitterLIst" id="userDropdown3" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="userDropdown4"
+                                        aria-expanded="false">
+                                    DMX CONTROLLER
+                                </button>
+                                <ul class="dropdown-menu dmxControllerList" id="userDropdown4" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="userDropdown5"
+                                        aria-expanded="false">
+                                    THEATRICAL LIGHTING
+                                </button>
+                                <ul class="dropdown-menu theatricalLightingList" id="userDropdown5" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 관리자 프로덕트 카테고리 메뉴 -->
+                    <ul class="dropdown-menu adminProductCategory" th:if="${session.auth.equals('admin')}" style="display: none;">
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="adminDropdown1"
+                                        aria-expanded="false">
+                                    LED HOUSE LIGHT
+                                </button>
+                                <ul class="dropdown-menu adminLedHouseLightList" id="adminDropdown1" style="display: none; left: 100%; top: -8px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="adminDropdown2"
+                                        aria-expanded="false">
+                                    RD PANEL
+                                </button>
+                                <ul class="dropdown-menu adminRdPanelList" id="adminDropdown2" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="adminDropdown3"
+                                        aria-expanded="false">
+                                    DMX SPLITTER
+                                </button>
+                                <ul class="dropdown-menu adminDmxSplitterLIst" id="adminDropdown3" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="adminDropdown4"
+                                        aria-expanded="false">
+                                    DMX CONTROLLER
+                                </button>
+                                <ul class="dropdown-menu adminDmxControllerList" id="adminDropdown4" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item" data-bs-toggle="adminDropdown5"
+                                        aria-expanded="false">
+                                    THEATRICAL LIGHTING
+                                </button>
+                                <ul class="dropdown-menu adminTheatricalLightingList" id="adminDropdown5" style="display: none; left: 100%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="/gds/contact" th:if="${session.auth.equals('user')}" class="nav-item nav-link"
+                   style="color: white">Contact</a> <!-- 문의 -->
+                <a href="/gds/admin/contact" th:if="${session.auth.equals('admin')}" class="nav-item nav-link"
+                   style="color: white">Contact</a> <!-- 문의 -->
+
+                <a href="/gds/download" th:if="${session.auth.equals('user')}" class="nav-item nav-link">Catalogue</a>
+                <a href="/gds/admin/download" th:if="${session.auth.equals('admin')}" class="nav-item nav-link">Catalogue</a>
+
+                <a href="#" class=" nav-item nav-link " th:if="${session.auth.equals('admin')}">
+                    <button class='nav-btn btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">+
+                    </button>
+                </a>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><!-- 한글 -->
+                    <img th:if="${session.language.equals('Korean')}" class='flag'
+                         style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_kor.png}">
+                    <img th:if="${session.language.equals('English')}" class='flag'
+                         style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_usa.png}">
+                    LANGUAGE
+                </a>
+                <div class="dropdown-menu rounded-0 m-0"><!-- 영문 -->
+                    <a th:href="@{/translate/product/detail/{language}(language = Korean)/{productId}(productId=${productId})}"
+                       class="dropdown-item"><!-- 한글 -->
+                        <img class='flag' style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_kor.png}">Korean</a>
+                    <a th:href="@{/translate/product/detail/{language}(language = English)/{productId}(productId=${productId})}"
+                       class="dropdown-item"><!-- 영문 -->
+                        <img class='flag' style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_usa.png}">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<div class='col-12 productDetailWrap'>
+    <img th:src="${productInfo.getProductImgUrl()}" alt="">
+    <div class='productDetailText col-7'>
+        <div class='col-8 mx-auto'>
+            <h4 th:text="${productInfo.getProductName()}"></h4>
+            <p th:if="${session.language.equals('Korean')}" th:each="descriptKor : ${productInfo.getDescriptKorGroup()}"
+               th:text="${descriptKor}"></p>
+            <p th:if="${session.language.equals('English')}"
+               th:each="descriptEng : ${productInfo.getDescriptEngGroup()}" th:text="${descriptEng}"></p>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">FEATURE</a>
+                </li>
+            </ul>
+            <div class='col-12 tab01'>
+                <ul class='listStyle'>
+                    <li th:if="${session.language.equals('Korean')}"
+                        th:each="specKor : ${productInfo.getSpecKorGroup()}" th:text="${specKor}"></li>
+                    <li th:if="${session.language.equals('English')}"
+                        th:each="specEng : ${productInfo.getSpecEngGroup()}" th:text="${specEng}"></li>
+                </ul>
+            </div>
+            <div class='related productList col-12'>
+                <h4>Related Products</h4>
+                <ul class='d-flex '>
+                    <a th:each="productImage : ${productInfo.getMediaList()}" href="#">
+                        <li>
+                            <img th:src="${productImage.getMediaUploadUrl()}" alt="">
+                        </li>
+                    </a>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer Start -->
+<div class="-fluid bg-dark text-white-50 footer  wow fadeIn" data-wow-delay="0.1s">
+    <div class=" py-5" style='    width: 90%;
+    margin: 0 auto;'>
+        <div class="row g-5">
+            <div class='d-flex'>
+
+                <img th:src="@{/img/gdskorea.png}" alt="" style='margin-right: 64px; width: 230px; height: 140px;'>
+                <div>
+                    <p style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        sales@gds-korea.com +82 031-8066-7442
+                    </p>
+                    <!-- sales@gds-korea.com +82 (0) 31 8066 7442 -->
+                    <p style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        #501 Central Biz Tower
+                    </p>
+                    <!-- #501 Central Biz Tower -->
+                    <p style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        260 Changnyong-daero, Yeongtong-Gu Suwon-si, Gyeonggi-do (16229)
+                    </p>
+                    <!-- 260 Changnyong-daero, Yeongtong-Gu Suwon-si, Gyeonggi-do (16229) -->
+                    <p style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        Rep. of Korea
+                    </p>
+                    <!-- Rep. of Korea -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/wow/wow.min.js}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+
+
+<script>
+    //헤더 네비 보이기
+
+    // JavaScript to show/hide the navbar on scroll
+    var prevScrollPos = window.pageYOffset;
+    var navbar = document.querySelector('.navbar');
+
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+            // Show the navbar
+            navbar.style.top = '0';
+        } else {
+            // Hide the navbar
+            navbar.style.top = '-100px'; // Adjust the value as needed
+        }
+        prevScrollPos = currentScrollPos;
+
+        // Add or remove the bg-white class based on scroll position
+        if (currentScrollPos > 100) { // Adjust the scroll position threshold as needed
+            navbar.classList.add('bg-white'); // Add bg-white class
+        } else {
+            navbar.classList.remove('bg-white'); // Remove bg-white class
+        }
+    }
+    //헤더 네비 끝
+    // 탭 기능 추가
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const tab01 = document.querySelector('.tab01');
+        const tab02 = document.querySelector('.tab02');
+
+        navLinks[0].addEventListener('click', function () {
+            navLinks[0].classList.add('active');
+            navLinks[1].classList.remove('active');
+            tab01.style.display = 'block';
+            tab02.style.display = 'none';
+        });
+
+        navLinks[1].addEventListener('click', function () {
+            navLinks[1].classList.add('active');
+            navLinks[0].classList.remove('active');
+            tab02.style.display = 'block';
+            tab01.style.display = 'none';
+        });
+    });
+
+    $(document).ready(function () {
+        /** 메뉴에 호버 되는 카테고리 리스트 **/
+        fetch("/gds/category", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then((data) => {
+                categorys = data;
+
+                categorys.forEach(element => {
+                    let html = '';
+                    let adminHtml = '';
+
+                    html += `
+                        <li>
+                                <button type="button" onclick="location.href='/gds/product/${element.categoryName}'"  class="dropdown-item" aria-expanded="false">
+                                    ${element.categoryName}
+                                </button>
+                        </li>`
+
+                    adminHtml += `
+                        <li>
+                                <button type="button" onclick="location.href='/gds/admin/product/${element.categoryName}'"  class="dropdown-item" aria-expanded="false">
+                                    ${element.categoryName}
+                                </button>
+                        </li>`
+
+                    if(element.categoryId === 1){
+                        $('.ledHouseLightList').append(html)//화면에 출력
+                        $('.adminLedHouseLightList').append(adminHtml)//화면에 출력
+                    }else if(element.categoryId === 2){
+                        $('.rdPanelList').append(html)//화면에 출력
+                        $('.adminRdPanelList').append(adminHtml)//화면에 출력
+                    }else if(element.categoryId === 3){
+                        $('.dmxSplitterLIst').append(html)//화면에 출력
+                        $('.adminDmxSplitterLIst').append(adminHtml)//화면에 출력
+                    }else if(element.categoryId === 4){
+                        $('.dmxControllerList').append(html)//화면에 출력
+                        $('.adminDmxControllerList').append(adminHtml)//화면에 출력
+                    }else if(element.categoryId >= 5 && element.categoryId <= 7){
+                        $('.theatricalLightingList').append(html)//화면에 출력
+                        $('.adminTheatricalLightingList').append(adminHtml)//화면에 출력
+                    }
+                });
+
+            });
+
+    });
+
+    // 첫 번째 드롭다운 토글
+    $('[data-bs-toggle="dropdown"]').on('click', function (e) {
+        e.preventDefault();
+        var parentDropdown = $(this).closest('.dropdown');
+        parentDropdown.find('.dropdown-menu').first().toggle();
+
+        // 다른 드롭다운 닫기
+        $('.dropdown').not(parentDropdown).find('.dropdown-menu').hide();
+    });
+
+    // 관리자 접근 프로덕트 카테고리
+    $('[data-bs-toggle="adminDropdown1"]').on('click', function (e) {
+        e.preventDefault();
+        $('#adminDropdown1').toggle();
+        // 다른 드롭다운 닫기
+        $('#adminDropdown2, #adminDropdown3, #adminDropdown4, #adminDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="adminDropdown2"]').on('click', function (e) {
+        e.preventDefault();
+        $('#adminDropdown2').toggle();
+        // 다른 드롭다운 닫기
+        $('#adminDropdown1, #adminDropdown3, #adminDropdown4, #adminDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="adminDropdown3"]').on('click', function (e) {
+        e.preventDefault();
+        $('#adminDropdown3').toggle();
+        // 다른 드롭다운 닫기
+        $('#adminDropdown1, #adminDropdown2, #adminDropdown4, #adminDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="adminDropdown4"]').on('click', function (e) {
+        e.preventDefault();
+        $('#adminDropdown4').toggle();
+        // 다른 드롭다운 닫기
+        $('#adminDropdown1, #adminDropdown2, #adminDropdown3, #adminDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="adminDropdown5"]').on('click', function (e) {
+        e.preventDefault();
+        $('#adminDropdown5').toggle();
+        // 다른 드롭다운 닫기
+        $('#adminDropdown1, #adminDropdown2, #adminDropdown3, #adminDropdown4').hide();
+    });
+
+
+    // 일반 고객 접근 프로덕트 카테고리
+    $('[data-bs-toggle="userDropdown1"]').on('click', function (e) {
+        e.preventDefault();
+        $('#userDropdown1').toggle();
+        // 다른 드롭다운 닫기
+        $('#userDropdown2, #userDropdown3, #userDropdown4, #userDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="userDropdown2"]').on('click', function (e) {
+        e.preventDefault();
+        $('#userDropdown2').toggle();
+        // 다른 드롭다운 닫기
+        $('#userDropdown1, #userDropdown3, #userDropdown4, #userDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="userDropdown3"]').on('click', function (e) {
+        e.preventDefault();
+        $('#userDropdown3').toggle();
+        // 다른 드롭다운 닫기
+        $('#userDropdown1, #userDropdown2, #userDropdown4, #userDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="userDropdown4"]').on('click', function (e) {
+        e.preventDefault();
+        $('#userDropdown4').toggle();
+        // 다른 드롭다운 닫기
+        $('#userDropdown1, #userDropdown2, #userDropdown3, #userDropdown5').hide();
+    });
+
+    $('[data-bs-toggle="userDropdown5"]').on('click', function (e) {
+        e.preventDefault();
+        $('#userDropdown5').toggle();
+        // 다른 드롭다운 닫기
+        $('#userDropdown1, #userDropdown2, #userDropdown3, #userDropdown4').hide();
+    });
+
+    // 문서 클릭 시 드롭다운 닫기
+    $(document).on('click', function (e) {
+        if ($(e.target).closest('.dropdown').length === 0) {
+            $('.dropdown-menu').hide();
+        }
+    });
+
+</script>
+
+</body>
+
+</html>

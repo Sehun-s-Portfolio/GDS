@@ -1,0 +1,1268 @@
+@charset "UTF-8";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif !important;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 96px;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 21px;
+}
+
+.dropdown-menu {
+  min-width: 9rem !important;
+}
+.dropdown-menu a:active {
+  background-color: #ffcf00;
+}
+
+.navbar-nav a {
+  cursor: pointer;
+}
+.navbar-nav a:hover {
+  font-weight: bold;
+}
+
+/* Header start*/
+.navBar {
+  position: fixed;
+  /* margin-top: 45px; */
+  padding: 0;
+  transition: 0.5s;
+  z-index: 9999;
+  height: 75px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navBar nav {
+  width: 100%;
+}
+.navBar nav img {
+  width: 60%;
+}
+.navBar .navbar {
+  box-shadow: none;
+  transition: 0.5s;
+}
+.navBar .navbar .icon {
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+.navBar .navbar .dropdown-item {
+  font-size: 12px;
+}
+
+.navBar .nav-link.active {
+  color: #FFCF00 !important;
+}
+.navBar .bg-white {
+  border-bottom: 1px solid #999;
+}
+.navBar .collapse .flag {
+  max-width: 30px !important;
+}
+
+/* Header end*/
+/*Main 시작*/
+.YellowBtn {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FFCF00;
+  color: #222;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.SliderDiv {
+  max-height: 100vh;
+  width: 100%;
+  background-color: #000;
+}
+.SliderDiv video {
+  max-height: 100vh;
+  width: 100%;
+}
+.SliderDiv .videoCover {
+  background-color: rgba(34, 34, 34, 0.25);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.coverTextWrap {
+  height: 100%;
+  max-height: 1080px;
+}
+
+.coverText {
+  bottom: 120px;
+  left: 165px;
+}
+.coverText h2 {
+  color: #fff;
+  width: 70%;
+  margin-bottom: 50px;
+}
+.coverText p {
+  color: #fff;
+}
+
+.logoBelt {
+  width: 100%;
+  background-color: #FFCF00;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logoBelt ul {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+}
+.logoBelt ul li {
+  width: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.mainProduct {
+  margin: 100px 0;
+}
+.mainProduct h3 {
+  color: #2C2B79;
+  margin-bottom: 36px;
+}
+.mainProduct p {
+  color: #777;
+  margin-bottom: 20px;
+}
+.mainProduct .arrowBtn {
+  font-size: 32px;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.5;
+  margin-top: 50px;
+}
+
+.mpImage img {
+  width: 80%;
+}
+
+.mainProject {
+  margin-bottom: 100px;
+}
+
+.owl-item {
+  max-height: 600px;
+}
+.owl-item img {
+  min-height: 480px;
+}
+
+.owl-carousel .owl-dots {
+  display: block;
+  /* 도트 표시 */
+}
+
+.owlHover:hover {
+  position: relative;
+}
+.owlHover:hover .owlCover {
+  top: 0;
+}
+
+.owlCover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 43, 121, 0.45);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 3s;
+}
+.owlCover h4 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 430px;
+}
+
+/* 사용자 정의 Owl Carousel 스타일 */
+.owl-carousel .owl-dots {
+  display: block;
+  /* 도트 표시 */
+  margin-top: 20px;
+  /* 도트의 상단 여백 조정 */
+}
+.owl-carousel .owl-dot {
+  background-color: #FFA500;
+  /* 도트의 배경색 변경 (예: 주황색) */
+  width: 15px;
+  /* 도트의 가로 크기 조정 */
+  height: 15px;
+  /* 도트의 세로 크기 조정 */
+  margin: 0 5px;
+  /* 도트 사이의 간격 조정 */
+}
+.owl-carousel .owl-dot.active {
+  background-color: #FFD700;
+  /* 활성 도트의 배경색 변경 (예: 금색) */
+}
+
+.mainAbout {
+  background-image: url(../img/about.jpg);
+  background-size: cover;
+  min-height: 800px;
+  background-position: center;
+}
+
+.maYellowBox {
+  background-color: rgba(255, 207, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 130px;
+}
+.maYellowBox h3 {
+  color: #fff;
+  width: 80%;
+}
+.maYellowBox p {
+  color: #222;
+  width: 50%;
+  font-weight: 900;
+}
+.maYellowBox ul {
+  display: flex;
+  margin-top: 50px;
+}
+.maYellowBox ul li {
+  margin-right: 8px;
+}
+
+.gds {
+  width: 200px;
+  top: 20px;
+  left: 20px;
+}
+
+.mainInstagram {
+  padding: 0 5vw;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.mainInstagram .YellowBtn {
+  margin-top: 75px;
+}
+
+.miPost {
+  margin: 0 7px;
+  padding: 10px;
+  border: none;
+  max-width: 320px;
+  margin-bottom: 30px;
+  border-radius: 0;
+}
+
+.overlay {
+  display: none!important;
+}
+
+.miPost p {
+  margin: 0 7px;
+  padding: 20px 0 10px 0;
+  border: none;
+  max-width: 320px;
+  margin-bottom: 30px;
+}
+
+.miPost .overlay {
+  display: flex;
+  align-items: center;
+}
+
+.miPost .overlay img {
+  min-height: 1px!important;
+  width: 50px;
+  height: 50px;
+}
+
+.miPost .overlay p {
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.miPost p {
+  color: #2C2B79;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0;
+  margin-bottom: 0;
+  align-items: center;
+  font-weight: 500;
+}
+.miPost p:first-child {
+  margin: 5px 0;
+}
+.miPost p img {
+  max-width: 30px !important;
+  max-height: 30px !important;
+  min-height: 30px !important;
+  margin-right: 20px;
+  border-radius: 0!important;
+}
+.miPost img {
+  width: 100%;
+  max-width: 330px;
+  border-radius: 0!important;
+}
+
+.miPost .captionText{
+  width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+.instaBtn{
+  width: 240px;
+  height: 50px;
+  border-radius: 20px;
+  background: linear-gradient(60deg, rgba(2,0,36,1) 0%, rgba(255,108,171,1) 0%, rgba(167,104,224,1) 52%, rgba(115,102,255,1) 100%);
+  color: #fff;
+  border: none;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.mainContact {
+  min-height: 450px;
+  background-image: url(../img/footContact.png);
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.ContactText {
+  text-align: center;
+}
+.ContactText h2 {
+  color: #fff;
+  letter-spacing: 25px;
+}
+.ContactText p {
+  color: #fff;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-weight: 900;
+}
+
+.footer {
+  background-color: #FFCF00 !important;
+}
+
+/*Main 끝*/
+/* 프로젝트 시작*/
+.TopDivProject {
+  background-image: url(../img/Project.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  position: relative;
+  height: 600px;
+}
+.TopDivProject .projectCover {
+  background-color: rgba(34, 34, 34, 0.25);
+  top: 0;
+  width: 100%;
+  height: 500px;
+}
+.TopDivProject .projectCover .coverText {
+  bottom: 50px;
+}
+.TopDivProject .projectCover .coverText h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.TopDivProject .projectCover .coverText p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.TopDivProject .projectCover .coverText span {
+  font-size: 48px;
+  background-color: #ffcf00;
+  margin-bottom: 30px;
+  padding: 5px 20px;
+  color: #222;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.projectRowWrap {
+  margin: 80px 0;
+}
+.projectRowWrap .projectRow {
+  margin: 50px 0;
+  gap: 60px;
+  justify-content: center;
+}
+.projectRowWrap .projectRow .projectDiv {
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+.projectRowWrap .projectRow .projectDiv img {
+  width: 100%;
+  min-height: 436px;
+  min-width: 400px;
+}
+.projectRowWrap .projectRow .projectDiv .projectText {
+  padding: 40px 30px;
+}
+.projectRowWrap .projectRow .projectDiv .projectText h6 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+.projectRowWrap .projectRow .projectDiv .projectText h5 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+.projectRowWrap .projectRow .projectDiv .projectText span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #555;
+}
+
+/* 프로젝트 모달*/
+.picBox {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.picBox button {
+  border: 1px solid #999;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 20px 0;
+}
+.picBox #imageList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.picBox #imageList li img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.dataBox {
+  padding: 10px;
+  padding-top: 30px;
+}
+.dataBox div {
+  margin-bottom: 10px;
+}
+.dataBox div input {
+  width: 75%;
+  border: none;
+  border-bottom: 1px solid #555;
+  padding: 5px 10px;
+}
+.dataBox div label {
+  width: 25%;
+}
+.dataBox div textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+  border: 1px solid #555 !important;
+}
+
+.btn-primary {
+  background-color: #FFD700;
+  border-color: #FFD700;
+  color: #222 !important;
+  font-weight: bold;
+}
+
+/* 프로젝트 끝*/
+/*프로젝트 디테일 시작*/
+.projectDetailWrap .projectDetailTitle {
+  margin: 0 auto;
+  padding: 100px 0 100px 50px;
+}
+.projectDetailWrap .projectDetailTitle h6 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+}
+.projectDetailWrap .projectDetailTitle h5 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  margin: 25px 0 60px 0;
+}
+.projectDetailWrap .projectDetailTitle span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+}
+.projectDetailWrap .owl-stage-outer {
+  height: 700px;
+}
+.projectDetailWrap .owl-carousel .item img {
+  /* 이미지 최대 너비를 1200px로 설정 */
+  width: 80%;
+  /* 너비를 100%로 설정하여 부모 요소에 맞게 조절 */
+  height: auto;
+  /* 높이 자동 조절 */
+  margin: 150px 50px;
+}
+.projectDetailWrap .owl-carousel .owl-item.center img {
+  transform: scale(2);
+  /* center 클래스를 가진 슬라이드에만 1.2배 확대 스타일 적용 */
+  margin: 150px 50px;
+}
+.projectDetailWrap .owl-dots {
+  display: flex;
+  justify-content: center;
+}
+.projectDetailWrap .owl-dots button {
+  border: 1px solid #999;
+  border-radius: 100%;
+}
+.projectDetailWrap .owl-dots.disabled {
+  display: flex;
+}
+.projectDetailWrap .DetailTextDiv {
+  margin: 0 auto;
+  margin-top: 100px;
+  padding-left: 50px;
+}
+.projectDetailWrap .DetailTextDiv h3 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  margin: 25px 0 60px 0;
+}
+.projectDetailWrap .DetailTextDiv .DetailUnderDiv {
+  background-color: #ddd;
+  padding: 50px;
+}
+.projectDetailWrap .DetailTextDiv .DetailUnderDiv p {
+  color: #777;
+  font-size: 18px;
+  font-weight: 500;
+}
+.projectDetailWrap .DetailTextDiv a {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  margin-left: -50px;
+}
+
+/*프로젝트 디테일 끝*/
+/*프로덕트 메인 시작*/
+.TopDivProduct {
+  background-image: url(../img/productHeader.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  position: relative;
+}
+.TopDivProduct .productCover {
+  background-color: rgba(34, 34, 34, 0.25);
+  top: 0;
+  width: 100%;
+  height: 500px;
+}
+.TopDivProduct .productCover .coverText {
+  bottom: 50px;
+}
+.TopDivProduct .productCover .coverText h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.TopDivProduct .productCover .coverText p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.TopDivProduct .productCover .coverText span {
+  font-size: 40px;
+  font-weight: bold;
+  background-color: #ffcf00;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #000;
+}
+
+.productRowWrap .productMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 80px 0;
+}
+
+.productRowWrap .productMain > img {
+  width: 50%;
+  /*max-height: 600px;*/
+}
+
+.productRowWrap .productMain .productText h3 {
+  color: #2C2B79;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.productRowWrap .productMain .productText p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #777;
+  margin-bottom: 20px;
+}
+.productRowWrap .productMain .productText li {
+  align-items: center;
+  margin-right: 30px;
+}
+.productRowWrap .productMain .productText li img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+.productRowWrap .productMain .productText li span {
+  color: #222;
+  font-weight: bold;
+}
+.productRowWrap .productList {
+  margin-bottom: 200px;
+}
+.productRowWrap .productList ul a {
+  border: 2px solid #ffcf00;
+  width: 30%;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  max-width: 140px;
+  min-height: 140px;
+}
+
+.productRowWrap .productList ul a button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.productRowWrap .productList ul a:hover {
+  border: 3px solid #FFCF00;
+  filter: grayscale(1);
+}
+.productRowWrap .productList ul a:hover div {
+  z-index: 1 !important;
+}
+.productRowWrap .productList ul a:hover div span {
+  color: #222;
+}
+
+/*프로덕트 메인 끝*/
+/*프로덕트 디테일 시작*/
+.productDetailWrap {
+  display: flex;
+  align-items: center;
+}
+.productDetailWrap .imgdiv {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productDetailWrap .imgdiv img {
+  width: 60%;
+  height: 490px;
+}
+.productDetailWrap .nav-tabs {
+  border-bottom: 5px solid #FFCF00;
+}
+.productDetailWrap .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border: none;
+  color: #FFCF00;
+  font-weight: bold;
+  font-size: 18px;
+}
+.productDetailWrap .nav-tabs .nav-link {
+  font-weight: 600;
+  font-size: 16px;
+  color: #777;
+  margin-right: 10px;
+}
+.productDetailWrap .productDetailText {
+  padding: 0;
+}
+.productDetailWrap .productDetailText .tab02 {
+  display: none;
+}
+.productDetailWrap .productDetailText h4 {
+  font-size: 28px;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 27px;
+}
+.productDetailWrap .productDetailText p {
+  font-size: 16px;
+  color: #222;
+  font-weight: 400;
+}
+.productDetailWrap .productDetailText .listStyle {
+  padding: 4% 5%;
+}
+.productDetailWrap .productDetailText .listStyle li {
+  list-style: disc;
+}
+.productDetailWrap .productDetailText .listStyle li p {
+  font-size: 14px;
+  color: #222;
+  font-weight: 900;
+}
+.productDetailWrap .productDetailText .listStyle .blur {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productDetailWrap .productDetailText .listStyle .blur button {
+  width: 40%;
+  border: 1px solid #ffdf00;
+  border-radius: 20px;
+  background-color: #ffdf00;
+  font-weight: bold;
+  color: #222;
+  font-size: 14px;
+  padding: 2px 0;
+}
+.productDetailWrap .productDetailText .listStyle .blur button:hover {
+  background-color: #fff;
+  border: 1px solid #ffdf00;
+}
+
+.productDetailWrap .productList {
+  margin-top: 3rem;
+}
+.productDetailWrap .productList h4 {
+  font-size: 24px;
+}
+.productDetailWrap .productList ul a {
+  border: 3px solid #555;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.productDetailWrap .productList ul a:hover {
+  border: 3px solid #FFCF00;
+  filter: grayscale(1);
+}
+.productDetailWrap .productList ul a img {
+  width: 100%;
+}
+
+/*프로덕트 디테일 끝*/
+/* 어바웃 시작*/
+.TopDivAbout {
+  background-image: url(../img/aboutTop.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  position: relative;
+}
+.TopDivAbout .AboutCover {
+  background-color: rgba(34, 34, 34, 0.25);
+  top: 0;
+  width: 100%;
+  height: 600px;
+}
+.TopDivAbout .AboutCover .coverText {
+  bottom: 50px;
+}
+.TopDivAbout .AboutCover .coverText h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.TopDivAbout .AboutCover .coverText p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.TopDivAbout .AboutCover .coverText span {
+  font-size: 48px;
+  background-color: #ffcf00;
+  margin-bottom: 30px;
+  padding: 5px 20px;
+  color: #222;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.aboutRow {
+  min-height: 500px;
+  align-items: center;
+  margin-top: 80px;
+}
+.aboutRow span {
+  font-size: 24px;
+  color: #555;
+  width: 80%;
+}
+.aboutRow span span {
+  font-size: 48px;
+}
+.aboutRow p {
+  font-size: 16px;
+}
+
+.icondiv {
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+.icondiv .col-10 {
+  margin-bottom: 30px;
+}
+.icondiv h3 {
+  margin-bottom: 150px;
+}
+.icondiv img {
+  width: 120px;
+  height: 120px;
+  margin-right: 50px;
+}
+.icondiv .iconbox {
+  min-height: 200px;
+}
+.icondiv .iconbox h4 {
+  font-weight: bold;
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 20px;
+}
+.icondiv .iconbox span {
+  font-size: 18px;
+  color: #777;
+}
+
+/* 어바웃 끝 */
+/* 컨택트 시작 */
+.TopDivContact {
+  background-image: url(../img/contactTop.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  position: relative;
+  height: 400px;
+}
+.TopDivContact .contactCover {
+  background-color: rgba(34, 34, 34, 0.25);
+  top: 0;
+  width: 100%;
+  height: 400px;
+}
+.TopDivContact .contactCover .coverText {
+  bottom: 50px;
+}
+.TopDivContact .contactCover .coverText h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.TopDivContact .contactCover .coverText p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.TopDivContact .contactCover .coverText span {
+  font-size: 48px;
+  background-color: #ffcf00;
+  margin-bottom: 30px;
+  padding: 5px 20px;
+  color: #222;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.contactFormDiv h3 {
+  color: #000;
+  margin-bottom: 35px;
+}
+.contactFormDiv h3 span {
+  font-size: inherit;
+}
+.contactFormDiv p {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: auto;
+}
+.contactFormDiv input[type=text] {
+  border: none;
+  border-bottom: 1px solid #777;
+  height: 55px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+}
+.contactFormDiv input[type=tel] {
+  border: none;
+  border-bottom: 1px solid #777;
+  height: 55px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+}
+.contactFormDiv input[type=email] {
+  border: none;
+  border-bottom: 1px solid #777;
+  height: 55px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+}
+.contactFormDiv textarea {
+  border: none;
+  border-bottom: 1px solid #777;
+  height: 70px;
+  width: 90%;
+  padding: 5px 10px;
+  resize: none;
+}
+.contactFormDiv textarea::placeholder {
+  padding: 20px 0;
+}
+.contactFormDiv textarea::-webkit-scrollbar {
+  display: none;
+}
+.contactFormDiv input[type=submit] {
+  border: none;
+  background-color: #FFCF00;
+  height: 85px;
+  width: 90%;
+  padding: 5px 10px;
+  margin-bottom: 12px;
+  margin-top: 30px;
+}
+.contactFormDiv .upload-box {
+  width: 100%;
+  height: 100px;
+  border: 1px dotted rgba(119, 119, 119, 0.4666666667);
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactFormDiv .upload-box label img {
+  margin-right: 10px;
+}
+.contactRowWrap {
+  padding: 100px;
+}
+.contactRowWrap .infoDiv {
+  height: 250px;
+}
+.contactRowWrap .infoDiv img {
+  margin-right: 30px;
+}
+.contactRowWrap .infoDiv h5 {
+  color: #222;
+  font-weight: bold;
+}
+.contactRowWrap .infoDiv span a {
+  color: #DD5471;
+}
+.contactRowWrap .mapDiv {
+  margin-bottom: 125px;
+}
+.contactRowWrap .contactImage {
+  background-image: url(../img/contactRight.png);
+}
+
+/* 컨택트 끝*/
+@media screen and (max-width: 767px) {
+  /* 메인 시작 */
+  .navbar {
+    background-color: #fff;
+  }
+  .navbar a .icon {
+    justify-content: flex-start;
+  }
+  .navbar #navbarCollapse {
+    margin-top: 200px;
+  }
+  .SliderDiv {
+    margin-top: 75px;
+  }
+
+  .SliderDiv .videoCover .coverText span {
+    font-size: 48px;
+    background-color: #ffcf00;
+    margin-bottom: 30px;
+    padding: 5px 20px;
+    color: #222;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .SliderDiv .videoCover .coverText p {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .coverText {
+    bottom: 20px;
+    left: 25px;
+  }
+  .coverText h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  .coverText p {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .coverText span {
+    font-size: 48px;
+    background-color: #ffcf00;
+    margin-bottom: 30px;
+    padding: 5px 20px;
+    color: #222;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  .logoBelt {
+    min-height: 30px;
+  }
+  .logoBelt ul {
+    width: 100% !important;
+  }
+  .logoBelt ul li {
+    width: 60px;
+  }
+  .logoBelt ul li img {
+    width: 100%;
+  }
+  .mainProduct {
+    margin: 50px 0;
+  }
+  .mainProduct p {
+    width: 80%!important;
+  }
+  .mainProduct .row > .col-10 {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .mainProduct .row > .col-10 .mpImage {
+    width: 100% !important;
+  }
+  .mainProduct .row > .col-10 .mpText {
+    width: 100% !important;
+    margin-top: 30px;
+  }
+  .mainProduct .row > .col-10 .mpText h3 {
+    font-size: 32px;
+  }
+  .mainProduct .row > .col-10 .mpText p {
+    font-size: 16px;
+  }
+  .mainProduct .row > .col-10 .mpText .arrowBtn {
+    width: 100%;
+    float: right;
+  }
+  .mainProduct .row > .col-10 .mpText .arrowBtn span {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .mainProduct .row > .col-10 .mpText .arrowBtn img {
+    width: 30%;
+  }
+  .owl-item img {
+    min-height: 150px;
+  }
+  .owl-item .owlCover h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .owl-item .owlCover .YellowBtn {
+    width: 80px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .mainAbout {
+    min-height: 300px;
+  }
+  .mainAbout .gds {
+    width: 100px;
+  }
+  .mainAbout .maYellowBox {
+    padding-left: 30px;
+    width: 60%;
+  }
+  .mainAbout .maYellowBox h3 {
+    font-size: 24px;
+    margin-top: 100px;
+    width: 90%;
+  }
+  .mainAbout .maYellowBox p {
+    font-size: 12px;
+    width: 90%;
+    color: white;
+  }
+  .mainAbout .maYellowBox ul {
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .mainAbout .maYellowBox ul li {
+    max-width: 30px;
+    margin-bottom: 0px;
+  }
+  .mainAbout .maYellowBox ul li img {
+    width: 100%;
+  }
+
+  .instaheader .instacircle {
+    background: rgb(2,0,36);
+    background: linear-gradient(350deg, rgba(2,0,36,1) 0%, rgba(255,108,171,1) 0%, rgba(167,104,224,1) 52%, rgba(115,102,255,1) 100%);
+    border-radius: 100%;
+  }
+
+  .mainInstagram {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .mainInstagram #instagram-container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .mainInstagram .instaContainer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mainContact {
+    min-height: 300px;
+  }
+  .mainContact .ContactText h2 {
+    font-size: 24px;
+    letter-spacing: 5px;
+  }
+  .mainContact .ContactText p {
+    font-size: 12px;
+    padding: 20px 0;
+  }
+  .mainContact .YellowBtn {
+    width: 80px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  .miPost P {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .footer {
+    max-height: 100px;
+  }
+  .footer > div {
+    padding: 20px;
+    /*padding-top: 0 !important;*/
+    /*padding-bottom: 0 !important;*/
+  }
+  .footer > div p {
+    font-size: 12px;
+    filter: opacity(0.7);
+  }
+  .footer > div span {
+    font-size: 10px;
+  }
+  .footer .row > * {
+    margin-top: 0;
+  }
+  .footer .row > * img {
+    width: 30% !important;
+  }
+  /* 메인끝*/
+}
+
+@media screen and (max-width: 768px) {
+  .TopDivProduct .productCover p {
+    margin-top: 10px!important;
+    font-size: 12px!important;
+    width: 80%;
+    white-space: break-spaces;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0!important;
+  }
+}
+
+/*# sourceMappingURL=new.css.map */

@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GDS KOREA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link th:href="@{/img/favicon32.png}" rel="icon" type="image/png" sizes="32x32">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/new2.css}" rel="stylesheet">
+    <link th:href="@{/css/new2.scss}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .flex-container {
+            display: inline-flex;
+        }
+
+        .flex-item {
+            font-weight: 900;
+            height: 30px;
+            /**text-align: center;**/
+        }
+
+        .color-yellow {
+            background-color: yellow;
+        }
+
+        .productRowWrap .productList ul {
+            gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+        }
+
+        .confirmBtn:hover {
+            background-color: #ffff;
+            border: 2px solid #ffcf00;
+            color: #ffcf00 !important;
+        }
+
+        .fixbtn2 {
+            color: #222;
+            bottom: 50px;
+            right: 240px;
+            position: absolute;
+            padding: 10px 20px;
+            background-color: #ffdf00;
+            border: none;
+            border-radius: 10px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        .fixbtn3 {
+            color: #222;
+            bottom: 50px;
+            right: 400px;
+            position: absolute;
+            padding: 10px 20px;
+            background-color: #ffdf00;
+            border: none;
+            border-radius: 10px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid navBar bg-transparent">
+    <nav class="navbar  navbar-expand-lg  navbar-light py-0 px-4">
+        <!-- 로고 클릭 -->
+        <a href="/" class="navbar-brand d-flex align-items-center text-center">
+            <div class="icon p-2 me-2">
+                <img class="img-fluid" th:src="@{/img/gdskorea.png}" alt="Icon">
+            </div>
+        </a>
+
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <!-- 메인 -->
+                <a href="/" class="nav-item nav-link">Home</a>
+
+                <!-- 소개 -->
+                <a href="/gds/about" class="nav-item nav-link"
+                   style="color: white">About</a>
+
+                <!-- 프로젝트 -->
+                <a href="/gds/project" class="nav-item nav-link"
+                   style="color: white">Project</a>
+
+                <!-- 프로덕트 -->
+                <div class="dropdown">
+                    <a class="dropdown-toggle nav-item nav-link active" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Product Type
+                    </a>
+                    <!-- 유저 프로덕트 카테고리 메뉴 -->
+                    <ul class="dropdown-menu productCategory" style="display: none;">
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item"
+                                        data-bs-toggle="userDropdown1"
+                                        aria-expanded="false">
+                                    LED HOUSE LIGHT
+                                </button>
+                                <ul class="dropdown-menu ledHouseLightList" id="userDropdown1"
+                                    style="display: none; left: 116%; top: -8px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item"
+                                        data-bs-toggle="userDropdown2"
+                                        aria-expanded="false">
+                                    RD PANEL
+                                </button>
+                                <ul class="dropdown-menu rdPanelList" id="userDropdown2"
+                                    style="display: none; left: 116%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item"
+                                        data-bs-toggle="userDropdown3"
+                                        aria-expanded="false">
+                                    DMX SPLITTER
+                                </button>
+                                <ul class="dropdown-menu dmxSplitterLIst" id="userDropdown3"
+                                    style="display: none; left: 116%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item"
+                                        data-bs-toggle="userDropdown4"
+                                        aria-expanded="false">
+                                    DMX CONTROLLER
+                                </button>
+                                <ul class="dropdown-menu dmxControllerList" id="userDropdown4"
+                                    style="display: none; left: 116%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown-toggle dropdown-item"
+                                        data-bs-toggle="userDropdown5"
+                                        aria-expanded="false">
+                                    THEATRICAL LIGHTING
+                                </button>
+                                <ul class="dropdown-menu theatricalLightingList" id="userDropdown5"
+                                    style="display: none; left: 116%; top: 0px;">
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="/gds/contact" class="nav-item nav-link"
+                   style="color: white">Contact</a> <!-- 문의 -->
+
+                <a href="/gds/download" class="nav-item nav-link">Catalogue</a>
+
+                <a href="#" class=" nav-item nav-link " th:if="${session.auth.equals('admin')}">
+                    <button class='nav-btn btn btn-primary' data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCategory">+
+                    </button>
+                </a>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><!-- 한글 -->
+                    <img th:if="${session.language.equals('Korean')}" class='flag'
+                         style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_kor.png}">
+                    <img th:if="${session.language.equals('English')}" class='flag'
+                         style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_usa.png}">
+                    LANGUAGE
+                </a>
+                <div class="dropdown-menu rounded-0 m-0"><!-- 영문 -->
+                    <a th:href="@{/translate/product(language='Korean', category=${categoryName})}"
+                       class="dropdown-item"><!-- 한글 -->
+                        <img class='flag' style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_kor.png}">Korean</a>
+                    <a th:href="@{/translate/product(language='English', category=${categoryName})}"
+                       class="dropdown-item"><!-- 영문 -->
+                        <img class='flag' style='max-width: 30px; margin-right: 5px;' th:src="@{/img/flag_usa.png}">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<div class='col-12 TopDivProduct w-100 position-relative' style="background-size: contain!important">
+    <button th:if="${session.auth.equals('admin') && session.language.equals('Korean')}" class="btn btn-primary fixbtn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal">제품 등록하기
+    </button>
+    <button th:if="${session.auth.equals('admin') && session.language.equals('English')}" class="btn btn-primary fixbtn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Product Regist
+    </button>
+
+    <button th:if="${session.auth.equals('admin') && session.language.equals('Korean')}" class="btn btn-primary fixbtn2"
+            th:onClick="'deleteCategoryButton(' + ${categoryId} + ')'">카테고리 삭제
+    </button>
+    <button th:if="${session.auth.equals('admin') && session.language.equals('English')}"
+            class="btn btn-primary fixbtn2"
+            th:onClick="'deleteCategoryButton(' + ${categoryId} + ')'">Category Delete
+    </button>
+
+    <button th:if="${session.auth.equals('admin') && session.language.equals('Korean')}" class="btn btn-primary fixbtn3"
+            data-bs-toggle="modal"
+            data-bs-target="#categoryUpdateModal">카테고리 수정
+    </button>
+    <button th:if="${session.auth.equals('admin') && session.language.equals('English')}"
+            class="btn btn-primary fixbtn3" data-bs-toggle="modal"
+            data-bs-target="#categoryUpdateModal" style="right: 413px;">Category Update
+    </button>
+
+    <div class='productCover position-absolute'>
+        <div class='coverTextWrap position-relative'>
+            <div class='coverText position-absolute col-12'
+                 style="word-break: keep-all; word-wrap: break-word; white-space: pre-line;">
+                <span>Products</span>
+                <p class='col-4' th:if="${session.language.equals('Korean') && categoryKorDescription.equals('')}">
+                    GDS KOREA는 최첨단 기술을 바탕으로, 조명에 대한 어떠한 요구에도 부합하는 심미적이며 효율적인 기능의 아름다운 솔루션을 제공하는 다양한 조명 제품 및 컨트롤 시스템을
+                    개발해오고 있습니다. 또한, 다양한 제품을 고객의 요구 사항에 완벽하게 맞춤으로써 고객의 조명에 대한 비전을 실현시켜 드립니다.
+                </p>
+                <p class='col-4' th:if="${session.language.equals('Korean') && !categoryKorDescription.equals('')}"
+                   th:text="${categoryKorDescription}"></p>
+                <p class='col-4' th:if="${session.language.equals('English') && categoryEngDescription.equals('')}">
+                    Based on its cutting-edge technology, GDS KOREA has developed a variety of lighting products and
+                    control systems that provide beautiful solutions with aesthetic and efficient features to meet any
+                    lighting needs. It also enables your vision of lighting by fully aligning your products to your
+                    needs.
+                </p>
+                <p class='col-4' th:if="${session.language.equals('English') && !categoryKorDescription.equals('')}"
+                   th:text="${categoryEngDescription}"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='col-12 w-100 productRowWrap d-flex flex-column align-items-center position-relative'>
+    <div class='productMain col-10' th:id="${product.getProductId()}" style="border-bottom: solid 2px"
+         th:if="${productsInfo != null}"
+         th:each="product : ${productsInfo}"
+         th:value="${product.getProductId()}">
+
+        <!-- 썸네일 이미지 -->
+        <div class='d-flex justify-content-center align-items-center col-6'>
+            <img style='width: 85%;' th:src="${product.getThumbnailImg()}"
+                 th:id="'thumbnail' + ${product.getProductId()}" alt="">
+        </div>
+
+        <div class='productDetailText col-6'>
+            <form th:action="@{/gds/product/update(productId=${product.getProductId()}, categoryName=${categoryName})}"
+                  th:method="put"
+                  enctype="multipart/form-data" onsubmit="return updateInfoCheck();">
+
+                <div class='col-10 mx-auto'>
+                    <h4 th:text="${categoryName}"></h4>
+                    <div class="flex-container d-flex justify-content-between align-items-center">
+                        <div class="productName" th:id="'productName' + ${product.getProductId()}">
+                            <h5 th:text="${product.getProductName()}" th:class="'realProductName' + ${product.getProductId()}"></h5>
+                        </div>
+                        <div th:id="'reUploadProductName' + ${product.getProductId()}" class="reUploadProductName" style="display: none;">
+                            <textarea
+                                    name="reUploadProductRealName"
+                                    th:id="'newUploadProductRealName' + ${product.getProductId()}"
+                                    class="flex-item"
+                                    style="font-weight: 500; margin-bottom: 20px; min-height: 40px; width: 500px">
+                            </textarea>
+                        </div>
+
+                        <!-- 수정/삭제 버튼 -->
+                        <div>
+                            <button type="button" class="flex-item color-yellow"
+                                    style="margin: 0!important; border: 1px solid #999; background-color: #FFCF00"
+                                    th:if="${session.auth.equals('admin')}"
+                                    th:onClick="'updateButton(' + ${product.getProductId()} + ')'">
+                                U
+                            </button>
+                            <button type="button" class="flex-item color-yellow"
+                                    style="margin: 0!important; border: 1px solid #999; background-color: #FFCF00"
+                                    th:if="${session.auth.equals('admin')}"
+                                    th:onClick="'deleteButton('+ ${product.getProductId()} + ')'">
+                                D
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 제품 설명 -->
+                    <div th:id="'descript' + ${product.getProductId()}" class="productDescript">
+                        <p th:value="${product.getProductId()}" th:text="${descript}"
+                           th:each="descript : ${product.getProductDescript()}" style="margin-bottom: 0"
+                           th:class="'realNowDescript' + ${product.getProductId()}"></p>
+                    </div>
+                    <div th:id="'reUploadDescript' + ${product.getProductId()}" th:value="${product.getProductId()}"
+                         class="reUploadDescript"
+                         style="display: none;">
+                        <textarea name="reUploadProductDescript"
+                                  th:id="'newUploadDescript' + ${product.getProductId()}"></textarea>
+                    </div>
+
+                    <ul class="nav nav-tabs" style="margin-top: 30px">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">FEATURE</a>
+                        </li>
+                    </ul>
+
+                    <!-- 스펙 -->
+                    <div class='col-12 tab01' style="margin-bottom: 30px; position: relative;">
+                        <ul th:id="'spec' + ${product.getProductId()}" th:value="${product.getProductId()}"
+                            th:data-id="'list' + ${product.getProductId()}"
+                            class='listStyle productSpec'
+                            style='max-height: 500px; overflow: hidden; margin-bottom: 50px;'>
+
+                            <div class='blur' th:if="${product.getProductSpec().size() >= 15}">
+                                <button type="button" th:data-target="'list' + ${product.getProductId()}"
+                                        th:id="'moreButton' + ${product.getProductId()}"
+                                        th:onClick="toggleMore(this.getAttribute('id'))">더보기
+                                </button>
+                            </div>
+
+                            <ul th:each="spec : ${product.getProductSpec()}"
+                                th:class="'nowSpecParts' + ${product.getProductId()}">
+                                <li th:if="${!spec.contains('    ')}" th:value="${spec}" th:text="${spec}"
+                                    th:class="'realNowSpec' + ${product.getProductId()}"></li>
+                                <li th:if="${spec.contains('    ')}" th:value="${spec}" th:text="'⦁  ' + ${spec}"
+                                    th:class="'realNowSpec' + ${product.getProductId()}"
+                                    style="padding-left: 20px; list-style: none"></li>
+                            </ul>
+                        </ul>
+
+                        <textarea th:id="'reUploadSpec' + ${product.getProductId()}"
+                                  th:value="${product.getProductId()}" class="reUploadSpec" name="reUploadSpec"
+                                  style="display: none; min-height: 500px;">
+                        </textarea>
+                    </div>
+
+                    <!-- 업로드 파일 -->
+                    <h5>PDF Download</h5>
+                    <div class="fileWrap d-flex justify-content-between align-items-center pdfFile"
+                         th:value="${product.getProductId()}" style="margin-top: 30px;">
+                        <div th:id="'pdfFile' + ${product.getProductId()}" class="pdfFile">
+                            <img th:id="'fileImg' + ${product.getProductId()}" th:src='@{/img/pdf.png}'
+                                 style="width: 80px; margin-right: 20px;" class="fileImg">
+                            <a th:id="'fileName' + ${product.getProductId()}"
+                               class='col-10 d-flex justify-content-between align-items-center fileName'
+                               th:href="${product.getProductFile()}" download
+                               th:text="${product.getProductFileName()}"
+                               style="font-size: 18px; font-weight: bold;" target="_blank">
+                            </a>
+                            <button class="dtBtn" type="button" style="margin-top: 20px; max-height: 40px;">
+                                <a th:href="${product.getProductFile()}" th:text="Download" target="_blank" download>Download</a>
+                            </button>
+                        </div>
+
+                        <div th:id="'reUploadFile' + ${product.getProductId()}"
+                             style="background-color: white; display: none;" class="reUploadFilePart">
+                            <label for='uploadKor' class="dtBtn">
+                                <input type='file' name='reUploadFiles'>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 활용 이미지들 -->
+                    <div class='related productList col-12'>
+                        <h5>Related Products</h5>
+                        <div th:id="'imageFiles' + ${product.getProductId()}" class="imageFiles">
+                            <ul class='d-flex flex-wrap'>
+                                <!-- 프로덕트들의 활용 이미지 -->
+                                <a href="#" th:each="img : ${product.getImgList()}" class="useImageWrapper">
+                                    <li>
+                                        <button type="button" class="btn btnModal" data-bs-toggle="modal"
+                                                th:imgId="${img.getMediaUploadUrl()}"
+                                                th:onClick="changeImg(this.getAttribute('imgId'))"
+                                                data-bs-target="#relatedImage">
+                                            <img th:src="${img.getMediaUploadUrl()}" alt=""
+                                                 style="width: 120px; height: 110px;">
+                                        </button>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+
+                        <div th:id="'reUploadImageFile' + ${product.getProductId()}"
+                             style="background-color: white; display: none;" class="reUploadImageFilePart">
+                            <div class="picBox">
+                                <ul th:id="'imageList' + ${product.getProductId()}" class="imageList"
+                                    style="display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap;">
+
+                                </ul>
+                                <input type='file' name='reUploadImageFiles' accept="image/*" multiple
+                                       th:id="'reAddPic' + ${product.getProductId()}" class="reAddPic"
+                                       style="display: none;" onchange="inputNewImg(this);">
+                            </div>
+                        </div>
+
+                        <!-- 수정 버튼 -->
+                        <div class="col-12 d-flex" style="justify-content: flex-end; display: none; margin-top: 50px;">
+                            <button th:id="'btn' + ${product.getProductId()}" th:value="${product.getProductId()}"
+                                    type="submit" class="btn btn-primary confirmBtn"
+                                    style="display: none; border-radius: 10px; padding: 10px 25px;">
+                                CONFIRM
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Start -->
+<div class="-fluid bg-dark text-white-50 footer  wow fadeIn" data-wow-delay="0.1s">
+    <div class=" py-5" style='    width: 90%;
+    margin: 0 auto;'>
+        <div class="row g-5">
+            <div class='d-flex align-items-center'>
+                <img th:src="@{/img/gdskorea.png}" alt="" style='margin-right: 64px; width: 120px; height: 60px;'>
+                <div>
+                    <p style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        sales@gds-korea.com +82 031-8066-7442
+                    </p>
+                    <!-- sales@gds-korea.com +82 (0) 31 8066 7442 -->
+                    <p th:if="${session.language.equals('English')}"
+                       style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        #501 Central Biz Tower
+                    </p>
+                    <p th:if="${session.language.equals('Korean')}"
+                       style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        센트럴 비즈 타워 501호
+                    </p>
+                    <!-- #501 Central Biz Tower -->
+                    <p th:if="${session.language.equals('English')}"
+                       style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        260 Changnyong-daero, Yeongtong-Gu Suwon-si, Gyeonggi-do (16229)
+                    </p>
+                    <p th:if="${session.language.equals('Korean')}"
+                       style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        경기도 수원시 영통구 창룡대로 260 KR (16229)
+                    </p>
+                    <!-- 260 Changnyong-daero, Yeongtong-Gu Suwon-si, Gyeonggi-do (16229) -->
+                    <p th:if="${session.language.equals('English')}"
+                       style='color:#222; font-weight: bold; font-size: 15px; margin-bottom: 0.4rem; opacity: 0.8;'>
+                        Rep. of Korea
+                    </p>
+                    <!-- Rep. of Korea -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- 프로덕트 추가 Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1"
+     th:aria-labelledby="'productAddModalLabel' + ${session.language}" aria-hidden="true"
+     style='z-index: 9999;'>
+    <div class="modal-dialog" style="max-width: 70vw!important">
+        <form th:action="@{/gds/product/add(categoryName=${categoryName})}" th:method="post"
+              enctype="multipart/form-data">
+            <div class="modal-content">
+                <input type="hidden" th:name="${categoryName}" th:value="${categoryName}">
+                <div class="modal-header">
+                    <h1 th:if="${session.language.equals('Korean')}" class="modal-title fs-5"
+                        th:id="'productAddModalLabel' + ${session.language}">제품 추가하기</h1>
+                    <h1 th:if="${session.language.equals('English')}" class="modal-title fs-5"
+                        th:id="'productAddModalLabel' + ${session.language}">Product Add</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body productModal">
+                    <div class="d-flex justify-content-around align-items-start">
+                        <div class='d-flex justify-content-around align-items-start flex-column' style="width: 40%">
+                            <label th:if="${session.language.equals('Korean')}" style="margin-bottom: 10px">제품 명</label>
+                            <label th:if="${session.language.equals('English')}"
+                                   style="margin-bottom: 10px">Product</label>
+                            <input type="text" name="productName">
+                        </div>
+                        <div class="d-flex flex-column" style="width: 40%">
+                            <label th:if="${session.language.equals('Korean')}" style="margin-bottom: 10px">이미지</label>
+                            <label th:if="${session.language.equals('English')}"
+                                   style="margin-bottom: 10px">Images</label>
+                            <div class='picBox d-flex flex-column'>
+                                <input id='addPic' type="file" accept="image/*" multiple style='display: none;'
+                                       name="imgFiles">
+                                <output id="showImgs" style="white-space: pre-wrap"></output>
+                                <label for='addPic'>
+                                    <button th:if="${session.language.equals('Korean')}" type='button'
+                                            onclick="document.getElementById('addPic').click();">사진 추가하기
+                                    </button>
+                                    <button th:if="${session.language.equals('English')}" type='button'
+                                            onclick="document.getElementById('addPic').click();">Image Add
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='d-flex justify-content-around align-items-start'>
+                        <div style="width: 40%">
+                            <h5 th:if="${session.language.equals('Korean')}">제품 설명 (국문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product Descript (KOREAN)</h5>
+                            <textarea name="productDescriptKor"></textarea>
+                        </div>
+                        <div style="width: 40%">
+                            <h5 th:if="${session.language.equals('Korean')}">제품 스펙 (국문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product Spec (Korean)</h5>
+                            <textarea name="productSpecKor"></textarea>
+                        </div>
+                    </div>
+                    <div class='d-flex justify-content-around align-items-start'>
+                        <div style="width: 40%">
+                            <h5 th:if="${session.language.equals('Korean')}">제품 설명 (영문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product Descript (ENGLISH)</h5>
+                            <textarea name="productDescriptEng"></textarea>
+                        </div>
+                        <div style="width: 40%">
+                            <h5 th:if="${session.language.equals('Korean')}">제품 스펙 (영문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product Spec (ENGLISH)</h5>
+                            <textarea name="productSpecEng"></textarea>
+                        </div>
+                    </div>
+                    <div class='d-flex justify-content-around align-items-start'>
+                        <div>
+                            <h5 th:if="${session.language.equals('Korean')}">제품 파일 (국문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product File (KOREAN)</h5>
+                            <div class="fileInput d-flex align-items-center">
+                                <img th:src='@{/img/pdf.png}' style="width: 50px">
+                                <label for='uploadKor' class="dtBtn">
+                                    <input type='file' name='korFile' id='uploadKor'>Upload
+                                </label>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <output id="showKorFile"></output>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 th:if="${session.language.equals('Korean')}">제품 파일 (영문)</h5>
+                            <h5 th:if="${session.language.equals('English')}">Product File (ENGLISH)</h5>
+                            <div class="fileInput d-flex align-items-center">
+                                <img th:src='@{/img/pdf.png}' style="width: 50px">
+                                <label for='uploadEng' class="dtBtn">
+                                    <input type='file' name='engFile' id='uploadEng'>Upload
+                                </label>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <output id="showEngFile"></output>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button th:if="${session.language.equals('Korean')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">취소
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">CANCEL
+                    </button>
+
+                    <button th:if="${session.language.equals('Korean')}" type="submit" class="btn btn-primary">제품 저장
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="submit" class="btn btn-primary">Product
+                        Save
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 카테고리 추가 Modal -->
+<div class="modal fade" id="exampleModalCategory" tabindex="-1"
+     th:aria-labelledby="'exampleModalLabel' + ${session.language}"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <form th:action="@{/gds/category/add(page=${categoryName})}" th:method="post"
+              enctype="application/x-www-form-urlencoded">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 th:if="${session.language.equals('Korean')}" class="modal-title fs-5"
+                        th:id="'exampleModalLabel' + ${session.language}">제품 카테고리 등록</h1>
+                    <h1 th:if="${session.language.equals('English')}" class="modal-title fs-5"
+                        th:id="'exampleModalLabel' + ${session.language}">Product Category Regist</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class='d-flex justify-content-between flex-wrap menuCategory'>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>대분류 카테고리</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Major category</label>
+                            <input type="hidden" id="orgCategory" name="orgCategory">
+                            <select class='col-8' onchange="selectCategory(this.value);" style="padding: 5px 10px;">
+                                <option th:if="${session.language.equals('Korean')}" value="0">===대분류 카테고리===</option>
+                                <option th:if="${session.language.equals('English')}" value="0">===Major category===
+                                </option>
+                                <option value="1">LED HOUSE LIGHT</option>
+                                <option value="2">RD PANEL</option>
+                                <option value="3">DMX SPLITTER</option>
+                                <option value="4">DMX CONTROLLER</option>
+                                <option value="5">THEATRICAL LIGHTING</option>
+                            </select>
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>카테고리</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Category</label>
+                            <input class='col-8' type="text" name="categoryName" id="categoryName">
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>설명 (국문)</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Description
+                                (KOREAN)</label>
+                            <textarea class='col-8' type="text" name="categoryKorDescription"
+                                      id="categoryKorDescription" style="height: 150px"></textarea>
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>설명 (영문)</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Description
+                                (ENGLISH)</label>
+                            <textarea class='col-8' type="text" name="categoryEngDescription"
+                                      id="categoryEngDescription" style="height: 150px"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button th:if="${session.language.equals('Korean')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">취소
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">CANCEL
+                    </button>
+
+                    <button th:if="${session.language.equals('Korean')}" type="submit" class="btn btn-primary">저장
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="submit" class="btn btn-primary">SAVE
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 카테고리 수정 Modal -->
+<div class="modal fade" id="categoryUpdateModal" tabindex="-1"
+     th:aria-labelledby="'categoryUpdateModalLabel' + ${session.language}"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <form th:action="@{/gds/category/update(categoryId=${categoryId})}" th:method="put"
+              enctype="application/x-www-form-urlencoded">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 th:if="${session.language.equals('Korean')}" class="modal-title fs-5"
+                        th:id="'categoryUpdateModalLabel' + ${session.language}">카테고리 수정</h1>
+                    <h1 th:if="${session.language.equals('English')}" class="modal-title fs-5"
+                        th:id="'categoryUpdateModalLabel' + ${session.language}">Category Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class='d-flex justify-content-between flex-wrap menuCategory'>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>대분류 카테고리</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Major Category</label>
+                            <input type="hidden" id="updateOrgCategory" name="updateOrgCategory"
+                                   th:value="${orgCategoryId}">
+                            <select class='col-8' onchange="selectOrgUpdateCategory(this.value);"
+                                    style="padding: 5px 10px;">
+                                <option th:value="${orgCategoryId}">[[${orgCategoryName}]]</option>
+                                <option value="1" th:if="${!orgCategoryId.equals('1')}">LED HOUSE LIGHT</option>
+                                <option value="2" th:if="${!orgCategoryId.equals('2')}">RD PANEL</option>
+                                <option value="3" th:if="${!orgCategoryId.equals('3')}">DMX SPLITTER</option>
+                                <option value="4" th:if="${!orgCategoryId.equals('4')}">DMX CONTROLLER</option>
+                                <option value="5" th:if="${!orgCategoryId.equals('5')}">THEATRICAL LIGHTING</option>
+                            </select>
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>카테고리</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Category</label>
+                            <input class='col-8' type="text" th:value="${categoryName}" name="updateCategoryName"
+                                   id="updateCategoryName" style="padding: 5px 10px;">
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>설명 (국문)</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Description
+                                (KOREAN)</label>
+                            <textarea class='col-8' type="text" th:value="${categoryKorDescription}"
+                                      name="updateCategoryKorDescription" id="updateCategoryKorDescription"
+                                      style="height: 150px; resize: none; padding: 5px 10px;">[[${categoryKorDescription}]]</textarea>
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label th:if="${session.language.equals('Korean')}" class='col-3'>설명 (영문)</label>
+                            <label th:if="${session.language.equals('English')}" class='col-3'>Description
+                                (ENGLISH)</label>
+                            <textarea class='col-8' type="text" th:value="${categoryEngDescription}"
+                                      name="updateCategoryEngDescription" id="updateCategoryEngDescription"
+                                      style="height: 150px; resize: none; padding: 5px 10px;">[[${categoryEngDescription}]]</textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button th:if="${session.language.equals('Korean')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">취소
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">CANCEL
+                    </button>
+
+                    <button th:if="${session.language.equals('Korean')}" type="submit" class="btn btn-primary">수정
+                    </button>
+                    <button th:if="${session.language.equals('English')}" type="submit" class="btn btn-primary">UPDATE
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 활용 이미지 확대 조회 Modal -->
+<div class="modal fade" id="relatedImage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+     style='z-index: 9999;'>
+    <div class="modal-dialog lightbox">
+        <div class="modal-content">
+            <div class="modal-header" style='border-bottom: none;'>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img th:src="@{/img/gdskorea.png}" id="imgModal" alt="" style='width: 100%;'>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form th:action="@{/gds/login(page='product/' + ${categoryName})}" th:method="post" class="nav-item nav-link">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">로그인</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class='d-flex justify-content-between flex-wrap menuCategory'>
+                        <div class='d-flex justify-content-around'>
+                            <label class='col-3'>아이디</label>
+                            <input type="text" name="loginId" class="loginId" id="loginId" placeholder="ID">
+                        </div>
+                        <div class='d-flex justify-content-around'>
+                            <label class='col-3'>비밀번호</label>
+                            <input type="password" name="loginPwd" class="loginPwd" id="loginPwd"
+                                   placeholder="PASSWORD">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script th:src="@{/lib/wow/wow.min.js}"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Template Javascript -->
+<script th:src="@{/js/main.js}"></script>
+<script th:inline="javascript" th:src="@{/js/newProduct.js}"></script>
+</body>
+</html>
